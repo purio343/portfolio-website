@@ -8,10 +8,11 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
+    <title id="title"></title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script defer src="javascript/script.js"></script>
   </head>
   <body>
     <div
@@ -24,10 +25,9 @@
             class="layout-content-container flex flex-col max-w-[960px] flex-1"
           >
             <h1
+              id="name"
               class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-6"
-            >
-              Kenji Tanaka
-            </h1>
+            ></h1>
             <p
               class="text-[#49739c] text-sm font-normal leading-normal pb-3 pt-1 px-4"
             >
@@ -105,7 +105,7 @@
             <p
               class="text-[#49739c] text-sm font-normal leading-normal pb-3 pt-1 px-4"
             >
-              Email: kenji.tanaka@email.com
+              Email: <span id="email"></span>
             </p>
           </div>
         </div>
