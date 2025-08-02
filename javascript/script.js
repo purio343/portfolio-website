@@ -1,3 +1,8 @@
+function main() {
+  embeddingInformation();
+  downloadResume();
+}
+
 function embeddingInformation() {
   fetch("info.json")
     .then((res) => res.json())
@@ -13,15 +18,18 @@ function embeddingInformation() {
 function addSkills(skills) {
   const skillsContainer = document.getElementById("skills");
   skills.forEach((skill) => {
-    const div = document.createElement("div");
-    div.className =
-      "flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#e7edf4] pl-4 pr-4";
-    const p = document.createElement("p");
-    p.className = "text-[#0d141c] text-sm font-medium leading-normal";
-    div.appendChild(p);
-    p.innerHTML = skill;
-    skillsContainer.appendChild(div);
+    const button = document.createElement("button");
+    button.className =
+      "flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c7ff2] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em] transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 ";
+    button.innerHTML = skill;
+    skillsContainer.appendChild(button);
+    button.addEventListener("click", () => console.log(skill));
   });
 }
 
-embeddingInformation();
+function downloadResume() {
+  const resume = document.getElementById("resume-button");
+  resume.addEventListener("click", () => console.log("Resuome button clicked"));
+}
+
+main();
