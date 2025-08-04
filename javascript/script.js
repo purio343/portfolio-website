@@ -29,7 +29,11 @@ function addSkills(skills) {
 
 function downloadResume() {
   const resume = document.getElementById("resume-button");
-  resume.addEventListener("click", () => console.log("Resuome button clicked"));
+  resume.addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.href = "media/resume.pdf";
+    link.click();
+  });
 }
 
 main();
